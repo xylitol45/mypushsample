@@ -27,7 +27,7 @@ angular.module('myApp.controllers', [])
     					"badge":"true",
     				    "sound":"true",
     				    "alert":"true",
-    				    "ecb":"onNotification"
+    				    "ecb":function(event){}
     				}
     		);
     	}
