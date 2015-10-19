@@ -8,8 +8,6 @@ angular.module('myApp.controllers', [])
 //    	$scope.$apply();
 //      }, false);
 	ionic.Platform.ready(function(){
-//    	_this.model = $cordovaDevice.getModel();
-//    	$scope.$apply();
     	
     	var pushNotification = window.plugins.pushNotification;
     	if (device.platform == 'ios') {
@@ -24,9 +22,14 @@ angular.module('myApp.controllers', [])
     					"badge":"true",
     				    "sound":"true",
     				    "alert":"true",
-    				    // "ecb":"onNotificationAPN"
+    				    "ecb":function(event){
+    				    	
+    				    }
     				}
     		);
+        	_this.model = $cordovaDevice.getModel();
+        	$scope.$apply();
+
     	}
 	 });
 
