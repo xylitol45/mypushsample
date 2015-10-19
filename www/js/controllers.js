@@ -27,7 +27,11 @@ angular.module('myApp.controllers', [])
     					"badge":"true",
     				    "sound":"true",
     				    "alert":"true",
-    				    "ecb":function(event){}
+    				    "ecb":function(event){
+    				        if ( event.alert ) {
+    				        	alert(event.alert);
+    				        }
+    				    }
     				}
     		);
     	}
