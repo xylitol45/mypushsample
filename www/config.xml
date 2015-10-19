@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.kick55.a.mypushsample"
+        version   = "0.0.1">
+
+    <name>myfirstapp</name>
+
+    <description>
+        This is a minimal PhoneGap app.
+    </description>
+
+    <author href="http://kick55.com" email="xylitol45@gmail.com">
+        xylitol45@gmail.com
+    </author>
+    
+    <icon src="icon.png" />
+
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="com.phonegap.plugin.statusbar" />
+
+</widget>
