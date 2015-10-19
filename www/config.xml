@@ -6,10 +6,10 @@
         id        = "com.kick55.a.mypushsample"
         version   = "0.0.1">
 
-    <name>myfirstapp</name>
+    <name>mypushsample</name>
 
     <description>
-        This is a minimal PhoneGap app.
+        mypushsample.
     </description>
 
     <author href="http://kick55.com" email="xylitol45@gmail.com">
