@@ -13,10 +13,10 @@ angular.module('myApp.controllers', [])
     	if ($cordovaDevice.getPlatform() == 'iOS') {
     		pushNotification.register(
     				function(token){
-    					alert("token:"+token);
+    					console.log("token:"+token);
     				},
     				function(err){
-    					alet("error:"+err);
+    					console.log("error:"+err);
     				},
     				{
     					"badge":"true",
