@@ -11,6 +11,7 @@ angular.module('myApp.controllers', [])
     	
     	var pushNotification = window.plugins.pushNotification;
     	if ($cordovaDevice.getPlatform() == 'iOS') {
+    		console.log('pushNotification');
     		pushNotification.register(
     				function(token){
     					console.log("token:"+token);
