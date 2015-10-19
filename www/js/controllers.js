@@ -1,5 +1,9 @@
 "use strict";
 
+var onNotification = function(event) {
+	
+};
+
 angular.module('myApp.controllers', [])
 .controller('mainCtrl',function($scope,$cordovaDevice){
 	var _this=this;
@@ -11,21 +15,19 @@ angular.module('myApp.controllers', [])
     	
     	var pushNotification = window.plugins.pushNotification;
     	if ($cordovaDevice.getPlatform() == 'iOS') {
-    		console.log('pushNotification');
+    		alert('pushNotification');
     		pushNotification.register(
     				function(token){
-    					console.log("token:"+token);
+    					alert("token:"+token);
     				},
     				function(err){
-    					console.log("error:"+err);
+    					alert("error:"+err);
     				},
     				{
     					"badge":"true",
     				    "sound":"true",
     				    "alert":"true",
-    				    "ecb":function(event){
-    				    	
-    				    }
+    				    "ecb":"onNotification"
     				}
     		);
     	}
