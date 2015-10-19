@@ -30,7 +30,7 @@ angular.module('myApp.controllers', [])
     						'data':{
     					        "deviceType": "ios",
     					        "deviceToken": token,
-    					        "channels": [""]
+    					        "channels": ["cat","dog"]
     					      }
     					}).then(function (res) {
     					    alert(res);
