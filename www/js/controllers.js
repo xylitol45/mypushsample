@@ -11,22 +11,22 @@ angular.module('myApp.controllers', [])
     	
 //    	var pushNotification = window.plugins.pushNotification;
     	if ($cordovaDevice.getPlatform() == 'iOS') {
-//    		pushNotification.register(
-//    				function(token){
-//    					alert("token:"+token);
-//    				},
-//    				function(err){
-//    					alet("error:"+err);
-//    				},
-//    				{
-//    					"badge":"true",
-//    				    "sound":"true",
-//    				    "alert":"true",
-//    				    "ecb":function(event){
-//    				    	
-//    				    }
-//    				}
-//    		);
+    		pushNotification.register(
+    				function(token){
+    					alert("token:"+token);
+    				},
+    				function(err){
+    					alet("error:"+err);
+    				},
+    				{
+    					"badge":"true",
+    				    "sound":"true",
+    				    "alert":"true",
+    				    "ecb":function(event){
+    				    	
+    				    }
+    				}
+    		);
     	}
     	_this.model = $cordovaDevice.getPlatform();
     	$scope.$apply();
