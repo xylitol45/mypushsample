@@ -9,7 +9,7 @@ angular.module('myApp.controllers', [])
 //      }, false);
 	ionic.Platform.ready(function(){
     	
-//    	var pushNotification = window.plugins.pushNotification;
+    	var pushNotification = window.plugins.pushNotification;
     	if ($cordovaDevice.getPlatform() == 'iOS') {
     		pushNotification.register(
     				function(token){
