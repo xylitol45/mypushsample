@@ -9,24 +9,24 @@ angular.module('myApp.controllers', [])
 //      }, false);
 	ionic.Platform.ready(function(){
     	
-    	var pushNotification = window.plugins.pushNotification;
+//    	var pushNotification = window.plugins.pushNotification;
     	if (device.platform == 'ios') {
-    		pushNotification.register(
-    				function(token){
-    					alert("token:"+token);
-    				},
-    				function(err){
-    					alet("error:"+err);
-    				},
-    				{
-    					"badge":"true",
-    				    "sound":"true",
-    				    "alert":"true",
-    				    "ecb":function(event){
-    				    	
-    				    }
-    				}
-    		);
+//    		pushNotification.register(
+//    				function(token){
+//    					alert("token:"+token);
+//    				},
+//    				function(err){
+//    					alet("error:"+err);
+//    				},
+//    				{
+//    					"badge":"true",
+//    				    "sound":"true",
+//    				    "alert":"true",
+//    				    "ecb":function(event){
+//    				    	
+//    				    }
+//    				}
+//    		);
         	_this.model = $cordovaDevice.getModel();
         	$scope.$apply();
 
