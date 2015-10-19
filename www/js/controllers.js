@@ -10,7 +10,7 @@ angular.module('myApp.controllers', [])
 	ionic.Platform.ready(function(){
     	
 //    	var pushNotification = window.plugins.pushNotification;
-    	if (device.platform == 'ios') {
+    	if ($cordovaDevice.getPlatform() == 'iOS') {
 //    		pushNotification.register(
 //    				function(token){
 //    					alert("token:"+token);
@@ -27,10 +27,10 @@ angular.module('myApp.controllers', [])
 //    				    }
 //    				}
 //    		);
-        	_this.model = $cordovaDevice.getModel();
-        	$scope.$apply();
-
     	}
+    	_this.model = $cordovaDevice.getPlatform();
+    	$scope.$apply();
+
 	 });
 
 })
