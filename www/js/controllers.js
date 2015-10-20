@@ -1,7 +1,9 @@
 "use strict";
 
 var onNotification = function(event) {
-	
+    if ( event.alert ) {
+    	alert(event.alert);
+    }
 };
 
 angular.module('myApp.controllers', [])
@@ -12,6 +14,8 @@ angular.module('myApp.controllers', [])
 //    	$scope.$apply();
 //      }, false);
 	ionic.Platform.ready(function(){
+		
+		server_certificates_sandbox.pem
     	
     	var pushNotification = window.plugins.pushNotification;
     	if ($cordovaDevice.getPlatform() == 'iOS') {
@@ -46,11 +50,12 @@ angular.module('myApp.controllers', [])
     					"badge":"true",
     				    "sound":"true",
     				    "alert":"true",
-    				    "ecb":function(event){
-    				        if ( event.alert ) {
-    				        	alert(event.alert);
-    				        }
-    				    }
+    				    "ecb": "onNotification"
+//    				    function(event){
+//    				        if ( event.alert ) {
+//    				        	alert(event.alert);
+//    				        }
+//    				    }
     				}
     		);
     	}
