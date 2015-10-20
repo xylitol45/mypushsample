@@ -32,7 +32,7 @@ angular.module('myApp.controllers', [])
 						'data':{
 					        "deviceType": "ios",
 					        "deviceToken": token,
-					        "channels": ["wanko"]
+					        "channels": [""]
 					      }
 					}).then(function (res) {
 					    alert(res);
@@ -48,9 +48,6 @@ angular.module('myApp.controllers', [])
 				    "sound":"true",
 				    "alert":"true",
 				    "ecb": "onMyNotification"
-// function is no call.
-//				    "ecb" : function(event){
-//				    }
  				}
     		);
     	}
