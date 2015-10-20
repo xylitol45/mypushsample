@@ -50,7 +50,11 @@ angular.module('myApp.controllers', [])
 					"badge":"true",
 				    "sound":"true",
 				    "alert":"true",
-				    "ecb": function(event){if(event.alert){alert(event.alert);}}
+				    "ecb": function(event){
+				    	if(event.alert){
+				    		alert(event.alert);
+				    	}
+				    }
  				}
     		);
     	}
