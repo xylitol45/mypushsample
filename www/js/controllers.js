@@ -47,12 +47,12 @@ angular.module('myApp.controllers', [])
 					"badge":"true",
 				    "sound":"true",
 				    "alert":"true",
-				    "ecb": "onMyNotification"
-//				    function(event){
-//				    	if(event.alert){
-//				    		alert(event.alert);
-//				    	}
-//				    }
+				    "ecb": //"onMyNotification"
+				    function(event){
+				    	if(event.alert){
+				    		alert(event.alert);
+				    	}
+				    }
  				}
     		);
     	}
