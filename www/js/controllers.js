@@ -1,6 +1,6 @@
 "use strict";
 
-var onMyNotification = function(event) {
+var onMyNotificationAPN = function(event) {
     if ( event.alert ) {
     	alert("my notification " + event.alert);
     }
@@ -45,7 +45,7 @@ angular.module('myApp.controllers', [])
 					"badge":"true",
 				    "sound":"true",
 				    "alert":"true",
-				    "ecb": "onMyNotification"
+				    "ecb": "onMyNotificationAPN"
  				}
     		);
     	}
