@@ -20,7 +20,6 @@ angular.module('myApp.controllers', [])
     		pushNotification.register(
 				function(token){
 					alert("token:"+token);
-					
 					$http({
 						'method':'POST',
 						'url':'https://api.parse.com/1/installations',
