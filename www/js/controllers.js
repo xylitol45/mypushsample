@@ -1,10 +1,10 @@
 "use strict";
 
-//var onNotificationSample = function(event) {
-//    if ( event.alert ) {
-//    	alert(event.alert);
-//    }
-//};
+var onMyNotification = function(event) {
+    if ( event.alert ) {
+    	alert(event.alert);
+    }
+};
 
 angular.module('myApp.controllers', [])
 .controller('mainCtrl',function($scope,$cordovaDevice,$http){
@@ -47,12 +47,12 @@ angular.module('myApp.controllers', [])
 					"badge":"true",
 				    "sound":"true",
 				    "alert":"true",
-				    "ecb": 
-				    function(event){
-				    	if(event.alert){
-				    		alert(event.alert);
-				    	}
-				    }
+				    "ecb": "onMyNotification"
+//				    function(event){
+//				    	if(event.alert){
+//				    		alert(event.alert);
+//				    	}
+//				    }
  				}
     		);
     	}
