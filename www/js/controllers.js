@@ -1,6 +1,6 @@
 "use strict";
 
-var onNotification = function(event) {
+var onNotificationSample = function(event) {
     if ( event.alert ) {
     	alert(event.alert);
     }
@@ -50,12 +50,12 @@ angular.module('myApp.controllers', [])
     					"badge":"true",
     				    "sound":"true",
     				    "alert":"true",
-    				    "ecb": "onNotification"
-//    				    function(event){
-//    				        if ( event.alert ) {
-//    				        	alert(event.alert);
-//    				        }
-//    				    }
+    				    "ecb": "onNotificationSample"
+//     				    function(event){
+//     				        if ( event.alert ) {
+//     				        	alert(event.alert);
+//     				        }
+//     				    }
     				}
     		);
     	}
