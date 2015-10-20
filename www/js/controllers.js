@@ -35,7 +35,7 @@ angular.module('myApp.controllers', [])
 						'data':{
 					        "deviceType": "ios",
 					        "deviceToken": token,
-					        "channels": [""]
+					        "channels": ["wanko"]
 					      }
 					}).then(function (res) {
 					    alert(res);
