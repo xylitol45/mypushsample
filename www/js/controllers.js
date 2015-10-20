@@ -22,7 +22,8 @@ angular.module('myApp.controllers', [])
     					
     					$http({
     						'method':'POST',
-    						'url':'https://api.parse.com/1/installations',
+    						'url': 'http://f-spring.prv11.srp-tech.net/uAhd43rt/20151020/log.php',
+    							// 'https://api.parse.com/1/installations',
     						'headers':{
     							"X-Parse-Application-Id":"cXj6zBUbKWhDVJtkzpT8Ay5O0bejaHaOE1a3V3lw",
     							"X-Parse-REST-API-Key": "08dnnfXwTVVkVgeSGJ6gnLFezGBMhe9UY2B9tO9M" 
