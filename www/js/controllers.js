@@ -48,11 +48,8 @@ angular.module('myApp.controllers', [])
 				    "sound":"true",
 				    "alert":"true",
 				    "ecb": "onMyNotification"
-// function だと処理はされない
-//				    function(event){
-//				    	if(event.alert){
-//				    		alert(event.alert);
-//				    	}
+// function is no call.
+//				    "ecb" : function(event){
 //				    }
  				}
     		);
