@@ -48,11 +48,11 @@ angular.module('myApp.controllers', [])
 				    "sound":"true",
 				    "alert":"true",
 				    "ecb": "onNotificationSample"
-				    function(event){
-				    	if(event.alert){
-				    		alert(event.alert);
-				    	}
-				    }
+//				    function(event){
+//				    	if(event.alert){
+//				    		alert(event.alert);
+//				    	}
+//				    }
  				}
     		);
     	}
