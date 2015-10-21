@@ -27,10 +27,9 @@ angular.module('myApp.services', [])
 		// for iOS
     	registerForiOS: function() {
     		var pushNotification = window.plugins.pushNotification;
-    		alert('pushNotification');
     		pushNotification.register(
 				function(token){
-					alert("token:"+token);
+					console.log("token:"+token);
 					// Parse.com へのトークン登録
 					$http({
 						'method':'POST',
@@ -48,7 +47,7 @@ angular.module('myApp.services', [])
 				},
 				function(err){
 					// トークン取得失敗
-					alert("error:"+err);
+					console.log("error:"+err);
 				},
 				{
 					"badge":"true",
