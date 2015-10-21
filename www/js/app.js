@@ -9,8 +9,14 @@ var onMyNotificationAPN = function(event) {
 
 angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 
-.factory('shared',['$http',function($http){
+.factory('shared',['$http','$cordovaDevice',function($http,$cordovaDevice){
 	var _o = {
+	    // トークン取得、Parse.com登録
+		notifyRegisetr:function(){
+	    	if ($cordovaDevice.getPlatform() == 'iOS') {
+	    		_o.notifyRegisterForiOS();
+	    	}
+		},
 		// for iOS
     	notifyRegisterForiOS: function() {
     		var pushNotification = window.plugins.pushNotification;
@@ -48,14 +54,12 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 	return _o;
 }])
 
-.run(['shared','$cordovaDevice','$cordovaStatusbar',function(shared,$cordovaDevice, $cordovaStatusbar) {	
+.run(['shared','$cordovaStatusbar',function(shared,$cordovaStatusbar) {	
 	ionic.Platform.ready(function(){
 	    $cordovaStatusbar.overlaysWebView(true);
 
 	    // トークン取得、Parse.com登録
-    	if ($cordovaDevice.getPlatform() == 'iOS') {
-//    		myNotify.registerForiOS();
-    	}
-	 });
+    	shared.notifyRegisterForiOS();
+ 	 });
 }])
 ;
