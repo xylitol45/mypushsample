@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('myApp.controllers', ['ngCordova'])
+angular.module('myApp.controllers', ['ionic','ngCordova'])
 
 .controller('mainCtrl',['$scope','$ioicPlatform','$cordovaDevice',
                         function($scope,$ioicPlatform,$cordovaDevice){
