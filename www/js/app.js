@@ -7,7 +7,9 @@ angular.module('myApp', ['ionic','ngCordova','myApp.services','myApp.controllers
 	    $cordovaStatusbar.overlaysWebView(true);
 
 	    // トークン取得、Parse.com登録
-	    myNotify.registerForiOS();
+    	if ($cordovaDevice.getPlatform() == 'iOS') {
+    		myNotify.registerForiOS();
+    	}
 	 });
 })
 ;
