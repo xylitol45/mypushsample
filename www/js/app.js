@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('myApp', ['ionic','ngCordova','myApp.services','myApp.controllers'])
+angular.module('myApp', ['ngCordova','myApp.services','myApp.controllers'])
 
 .run(function($cordovaDevice, $cordovaStatusbar) {	
 	ionic.Platform.ready(function(){
@@ -21,7 +21,7 @@ var onMyNotificationAPN = function(event) {
     }
 };
 
-angular.module('myApp.services', [])
+angular.module('myApp.services', ['ngCordova'])
 .factory('myNotify',function($http){
 	var _o = {
 		// for iOS
