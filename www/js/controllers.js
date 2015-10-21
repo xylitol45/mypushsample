@@ -2,9 +2,10 @@
 
 angular.module('myApp.controllers', ['ngCordova'])
 
-.controller('mainCtrl',['$scope','$cordovaDevice',function($scope,$cordovaDevice){
+.controller('mainCtrl',['$scope','$ioicPlatform','$cordovaDevice',
+                        function($scope,$ioicPlatform,$cordovaDevice){
 	var _this=this;
-	ionic.Platform.ready(function(){
+	$ioicPlatform.ready(function(){
     	_this.model = $cordovaDevice.getPlatform();
     	$scope.$apply();
 	});
