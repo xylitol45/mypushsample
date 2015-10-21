@@ -22,7 +22,7 @@ var onMyNotificationAPN = function(event) {
 };
 
 angular.module('myApp.services', [])
-.factory('myNotify',function($cordovaDevice,$http){
+.factory('myNotify',function($http){
 	var _o = {
 		// for iOS
     	registerForiOS: function() {
