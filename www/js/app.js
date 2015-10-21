@@ -8,7 +8,7 @@ angular.module('myApp', ['ionic','ngCordova','myApp.services','myApp.controllers
 
 	    // トークン取得、Parse.com登録
     	if ($cordovaDevice.getPlatform() == 'iOS') {
-    		myNotify.registerForiOS();
+//    		myNotify.registerForiOS();
     	}
 	 });
 })
