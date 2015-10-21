@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('myApp.controllers', ['ngCordova'])
+angular.module('myApp.controllers', [])
 .controller('mainCtrl',function($scope,$cordovaDevice){
 	var _this=this;
 	ionic.Platform.ready(function(){

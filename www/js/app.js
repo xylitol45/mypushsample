@@ -19,7 +19,7 @@ var onMyNotificationAPN = function(event) {
     }
 };
 
-angular.module('myApp.services', ['ngCordova'])
+angular.module('myApp.services', [])
 .factory('myNotify',function($cordovaDevice,$http){
 	var _o = {
 		// for iOS
