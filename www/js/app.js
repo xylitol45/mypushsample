@@ -1,31 +1,18 @@
 "use strict";
 
-angular.module('myApp', ['ngCordova','myApp.services','myApp.controllers'])
-
-.run(function($cordovaDevice, $cordovaStatusbar) {	
-	ionic.Platform.ready(function(){
-	    $cordovaStatusbar.overlaysWebView(true);
-
-	    // トークン取得、Parse.com登録
-    	if ($cordovaDevice.getPlatform() == 'iOS') {
-//    		myNotify.registerForiOS();
-    	}
-	 });
-})
-;
-
-// 通知受信
+//通知受信
 var onMyNotificationAPN = function(event) {
     if ( event.alert ) {
     	alert("my notification " + event.alert);
     }
 };
 
-angular.module('myApp.services', ['ngCordova'])
-.factory('myNotify',function($http){
+angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
+
+.factory('shared',['$http',function($http){
 	var _o = {
 		// for iOS
-    	registerForiOS: function() {
+    	notifyRegisterForiOS: function() {
     		var pushNotification = window.plugins.pushNotification;
     		pushNotification.register(
 				function(token){
@@ -59,5 +46,16 @@ angular.module('myApp.services', ['ngCordova'])
     	}
 	};
 	return _o;
-})
+}])
+
+.run(['shared','$cordovaDevice','$cordovaStatusbar',function(shared,$cordovaDevice, $cordovaStatusbar) {	
+	ionic.Platform.ready(function(){
+	    $cordovaStatusbar.overlaysWebView(true);
+
+	    // トークン取得、Parse.com登録
+    	if ($cordovaDevice.getPlatform() == 'iOS') {
+//    		myNotify.registerForiOS();
+    	}
+	 });
+}])
 ;
