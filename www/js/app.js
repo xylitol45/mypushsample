@@ -20,7 +20,7 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 		// for iOS
     	notifyRegisterForiOS: function() {
     		var pushNotification = window.plugins.pushNotification;
-    		alert('notifyRegisterForiOS');
+    		//alert('notifyRegisterForiOS');
     		pushNotification.register(
 				function(token){
 					console.log("token:"+token);
