@@ -61,7 +61,7 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
                 // perform your ajax request to server here
 				$http({
 					'method':'POST',
-					'url':'https://api.parse.com/1/classes/' + 'SampleData',
+					'url':'https://api.parse.com/1/classes/' + 'SampleData2',
 					'headers':{
 						"X-Parse-Application-Id":"cXj6zBUbKWhDVJtkzpT8Ay5O0bejaHaOE1a3V3lw",
 						"X-Parse-REST-API-Key": "08dnnfXwTVVkVgeSGJ6gnLFezGBMhe9UY2B9tO9M" 
@@ -77,10 +77,12 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 				});
             }
             Fetcher.configure(fetchCallback);
+            
+            alert('OK');
     	},
 		// for iOS
     	sampleParsePost: function() {
-    		alert('sample parse post');
+
 			$http({
 				
 				'method':'POST',
