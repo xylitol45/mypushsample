@@ -63,8 +63,8 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 					"X-Parse-REST-API-Key": _o.apiKey,
 				},
 				'data':{
-			        "name": "sample2",
-			        "time": (+ new Date()),				      
+			        "name": "sample dayo",
+			        "time": (+new Date()),				      
 			    }
 			}).then(
 				function(res){alert(res);},
@@ -74,7 +74,8 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 		// for iOS
     	sampleParsePostFetch: function() {
     		
-    		var Fetcher = window.plugins.backgroundFetch;
+    		var Fetcher = window.plugins.backgroundFetch,
+    		_str = (new Date()).toString();
 
             // Your background-fetch handler.
             var fetchCallback = function() {
@@ -88,7 +89,8 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 					},
 					'data':{
 				        "name": "sample go",
-				        "time": (+ new Date()),				      
+				        "time": (+new Date()),	
+				        "time2": _str,
 				    }
 				})
 				.then(function(){
