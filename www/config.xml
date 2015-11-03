@@ -22,6 +22,9 @@
     <gap:plugin name="com.phonegap.plugin.statusbar" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" />
     
+    <!-- 20151103 -->
+	<gap:plugin name="org.transistorsoft.cordova.plugin.background.fetch" />    
+    
     <access origin="*"/>
     
 

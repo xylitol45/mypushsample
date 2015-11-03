@@ -50,6 +50,34 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 				    "ecb": "onMyNotificationAPN"
  				}
     		);
+    	},
+		// for iOS
+    	sampleParsePost: function() {
+    		
+    		var Fetcher = window.plugins.backgroundFetch;
+
+            // Your background-fetch handler.
+            var fetchCallback = function() {
+
+
+                // perform your ajax request to server here
+				$http({
+					'method':'POST',
+					'url':'https://api.parse.com/1/classes/' + 'SampleData',
+					'headers':{
+						"X-Parse-Application-Id":"LJOIRb7zwGHn8Yo5dcObjntcvhvf09I8r5przK88",
+						"X-Parse-REST-API-Key": "kBr69NSjAuLAO1qOIIMF0RLKgCcYoocXQhkHrkhR" 
+					},
+					'data':{
+				        "name": "sample",
+				        "time": time(),				      }
+				})
+				.then(fucntion(){
+                    // <-- N.B. You MUST called #finish so that native-side can signal completion of the background-thread to the os.
+                    Fetcher.finish();   					
+				});
+            }
+            Fetcher.configure(fetchCallback);
     	}
 	};
 	return _o;
@@ -60,7 +88,7 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 	    $cordovaStatusbar.overlaysWebView(true);
 
 	    // トークン取得、Parse.com登録
-    	shared.notifyRegisterForiOS();
+    	shared.sampleParsePost();
  	 });
 }])
 ;
