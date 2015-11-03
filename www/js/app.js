@@ -11,6 +11,8 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 
 .factory('shared',['$http','$cordovaDevice',function($http,$cordovaDevice){
 	var _o = {
+		appId : "cXj6zBUbKWhDVJtkzpT8Ay5O0bejaHaOE1a3V3lw",
+		apiKey : "08dnnfXwTVVkVgeSGJ6gnLFezGBMhe9UY2B9tO9M",
 	    // トークン取得、Parse.com登録
 		notifyRegisetr:function(){
 	    	if ($cordovaDevice.getPlatform() == 'iOS') {
@@ -29,8 +31,8 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 						'method':'POST',
 						'url':'https://api.parse.com/1/installations',
 						'headers':{
-							"X-Parse-Application-Id":"cXj6zBUbKWhDVJtkzpT8Ay5O0bejaHaOE1a3V3lw",
-							"X-Parse-REST-API-Key": "08dnnfXwTVVkVgeSGJ6gnLFezGBMhe9UY2B9tO9M" 
+							"X-Parse-Application-Id": _o.appId,
+							"X-Parse-REST-API-Key": _o.apiKey,
 						},
 						'data':{
 					        "deviceType": "ios",
@@ -52,6 +54,24 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
     		);
     	},
 		// for iOS
+    	sampleParsePost: function() {
+			$http({
+				'method':'POST',
+				'url':'https://api.parse.com/1/classes/' + 'SampleData',
+				'headers':{
+					"X-Parse-Application-Id": _o.appId,
+					"X-Parse-REST-API-Key": _o.apiKey,
+				},
+				'data':{
+			        "name": "sample2",
+			        "time": (+ new Date()),				      
+			    }
+			}).then(
+				function(res){alert(res);},
+				function(err){alert(err);}
+			);
+    	},
+		// for iOS
     	sampleParsePostFetch: function() {
     		
     		var Fetcher = window.plugins.backgroundFetch;
@@ -63,8 +83,8 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 					'method':'POST',
 					'url':'https://api.parse.com/1/classes/' + 'SampleData2',
 					'headers':{
-						"X-Parse-Application-Id":"cXj6zBUbKWhDVJtkzpT8Ay5O0bejaHaOE1a3V3lw",
-						"X-Parse-REST-API-Key": "08dnnfXwTVVkVgeSGJ6gnLFezGBMhe9UY2B9tO9M" 
+						"X-Parse-Application-Id": _o.appId,
+						"X-Parse-REST-API-Key": _o.apiKey,
 					},
 					'data':{
 				        "name": "sample",
@@ -80,26 +100,6 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
             
             alert('OK');
     	},
-		// for iOS
-    	sampleParsePost: function() {
-
-			$http({
-				
-				'method':'POST',
-				'url':'https://api.parse.com/1/classes/' + 'SampleData',
-				'headers':{
-					"X-Parse-Application-Id":"cXj6zBUbKWhDVJtkzpT8Ay5O0bejaHaOE1a3V3lw",
-					"X-Parse-REST-API-Key": "08dnnfXwTVVkVgeSGJ6gnLFezGBMhe9UY2B9tO9M" 
-				},
-				'data':{
-			        "name": "sample2",
-			        "time": (+ new Date()),				      
-			    }
-			}).then(
-				function(res){alert(res);},
-				function(err){alert(err);}
-			);
-    	}
 	};
 	return _o;
 }])
