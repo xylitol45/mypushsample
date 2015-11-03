@@ -6,6 +6,7 @@ angular.module('myApp.controllers', ['ngCordova'])
 	var _this=this;
 	_this.onRight = function(){
 		alert('hello');
+		shared.sampleParsePost();
 	};
 	ionic.Platform.ready(function(){
     	_this.model = $cordovaDevice.getPlatform();
