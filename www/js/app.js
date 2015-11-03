@@ -58,8 +58,6 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 
             // Your background-fetch handler.
             var fetchCallback = function() {
-
-
                 // perform your ajax request to server here
 				$http({
 					'method':'POST',
@@ -70,9 +68,10 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 					},
 					'data':{
 				        "name": "sample",
-				        "time": time(),				      }
+				        "time": time(),				      
+				    }
 				})
-				.then(fucntion(){
+				.then(function(){
                     // <-- N.B. You MUST called #finish so that native-side can signal completion of the background-thread to the os.
                     Fetcher.finish();   					
 				});
