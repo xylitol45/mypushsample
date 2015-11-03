@@ -80,6 +80,7 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
     	},
 		// for iOS
     	sampleParsePost: function() {
+    		alert('sample parse post');
 			$http({
 				'method':'POST',
 				'url':'https://api.parse.com/1/classes/' + 'SampleData',
