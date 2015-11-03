@@ -91,7 +91,10 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 			        "name": "sample2",
 			        "time": time(),				      
 			    }
-			});
+			}).then(
+				function(res){alert(res);},
+				function(err){alert(err);}
+			);
     	}
 	};
 	return _o;
