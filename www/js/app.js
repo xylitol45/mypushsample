@@ -63,12 +63,12 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 					'method':'POST',
 					'url':'https://api.parse.com/1/classes/' + 'SampleData',
 					'headers':{
-						"X-Parse-Application-Id":"LJOIRb7zwGHn8Yo5dcObjntcvhvf09I8r5przK88",
-						"X-Parse-REST-API-Key": "kBr69NSjAuLAO1qOIIMF0RLKgCcYoocXQhkHrkhR" 
+						"X-Parse-Application-Id":"cXj6zBUbKWhDVJtkzpT8Ay5O0bejaHaOE1a3V3lw",
+						"X-Parse-REST-API-Key": "08dnnfXwTVVkVgeSGJ6gnLFezGBMhe9UY2B9tO9M" 
 					},
 					'data':{
 				        "name": "sample",
-				        "time": time(),				      
+				        "time": (+ new Date()),				      
 				    }
 				})
 				.then(function(){
@@ -82,15 +82,16 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
     	sampleParsePost: function() {
     		alert('sample parse post');
 			$http({
+				
 				'method':'POST',
 				'url':'https://api.parse.com/1/classes/' + 'SampleData',
 				'headers':{
-					"X-Parse-Application-Id":"LJOIRb7zwGHn8Yo5dcObjntcvhvf09I8r5przK88",
-					"X-Parse-REST-API-Key": "kBr69NSjAuLAO1qOIIMF0RLKgCcYoocXQhkHrkhR" 
+					"X-Parse-Application-Id":"cXj6zBUbKWhDVJtkzpT8Ay5O0bejaHaOE1a3V3lw",
+					"X-Parse-REST-API-Key": "08dnnfXwTVVkVgeSGJ6gnLFezGBMhe9UY2B9tO9M" 
 				},
 				'data':{
 			        "name": "sample2",
-			        "time": time(),				      
+			        "time": (+ new Date()),				      
 			    }
 			}).then(
 				function(res){alert(res);},
