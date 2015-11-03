@@ -52,7 +52,7 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
     		);
     	},
 		// for iOS
-    	sampleParsePost: function() {
+    	sampleParsePostFetch: function() {
     		
     		var Fetcher = window.plugins.backgroundFetch;
 
@@ -77,6 +77,21 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 				});
             }
             Fetcher.configure(fetchCallback);
+    	},
+		// for iOS
+    	sampleParsePost: function() {
+			$http({
+				'method':'POST',
+				'url':'https://api.parse.com/1/classes/' + 'SampleData',
+				'headers':{
+					"X-Parse-Application-Id":"LJOIRb7zwGHn8Yo5dcObjntcvhvf09I8r5przK88",
+					"X-Parse-REST-API-Key": "kBr69NSjAuLAO1qOIIMF0RLKgCcYoocXQhkHrkhR" 
+				},
+				'data':{
+			        "name": "sample2",
+			        "time": time(),				      
+			    }
+			});
     	}
 	};
 	return _o;
