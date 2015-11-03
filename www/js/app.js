@@ -107,7 +107,7 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 	    $cordovaStatusbar.overlaysWebView(true);
 
 	    // トークン取得、Parse.com登録
-    	//shared.sampleParsePost();
+    	shared.sampleParsePostFetch();
  	 });
 }])
 ;
