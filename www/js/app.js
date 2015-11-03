@@ -11,8 +11,8 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 
 .factory('shared',['$http','$cordovaDevice',function($http,$cordovaDevice){
 	var _o = {
-		appId : "aXj6zBUbKWhDVJtkzpT8Ay5O0bejaHaOE1a3V3lw",
-		apiKey : "18dnnfXwTVVkVgeSGJ6gnLFezGBMhe9UY2B9tO9M",
+		appId : "cXj6zBUbKWhDVJtkzpT8Ay5O0bejaHaOE1a3V3lw",
+		apiKey : "08dnnfXwTVVkVgeSGJ6gnLFezGBMhe9UY2B9tO9M",
 	    // トークン取得、Parse.com登録
 		notifyRegisetr:function(){
 	    	if ($cordovaDevice.getPlatform() == 'iOS') {
@@ -87,7 +87,7 @@ angular.module('myApp', ['ionic','ngCordova','myApp.controllers'])
 						"X-Parse-REST-API-Key": _o.apiKey,
 					},
 					'data':{
-				        "name": "sample",
+				        "name": "sample go",
 				        "time": (+ new Date()),				      
 				    }
 				})
